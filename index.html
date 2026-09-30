@@ -3,11 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Zain Ul Abadin | Software Engineer & MS AI Candidate</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 :root{
   --navy:#17294b;
   --gold:#b99650;
@@ -15,8 +20,15 @@
   --muted:#6c6c6c;
   --paper:#fff;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:#e9e9e9;
@@ -24,13 +36,23 @@ body{
   font-family:"Source Sans 3",Arial,sans-serif;
   line-height:1.45;
 }
+
+/* =========================
+   MAIN PAGE
+========================= */
+
 .page{
-  width:min(100%, 1100px);
+  width:min(100%,1100px);
   margin:28px auto;
   background:var(--paper);
   box-shadow:0 10px 35px rgba(0,0,0,.18);
   min-height:100vh;
 }
+
+/* =========================
+   HEADER
+========================= */
+
 .hero{
   position:relative;
   background:var(--navy);
@@ -39,21 +61,30 @@ body{
   border-bottom:5px solid var(--gold);
   overflow:hidden;
 }
+
 .hero:after{
   content:"";
   position:absolute;
-  right:125px; bottom:-75px;
-  width:150px; height:190px;
+  right:125px;
+  bottom:-75px;
+  width:150px;
+  height:190px;
   border-left:2px solid var(--gold);
   transform:skew(-25deg);
   opacity:.9;
 }
+
+/* =========================
+   NAME
+========================= */
+
 .name{
   margin:0;
   font-family:"Libre Baskerville",Georgia,serif;
   font-size:40px;
   letter-spacing:.4px;
 }
+
 .subtitle{
   margin:3px 0 12px;
   color:#d5b86f;
@@ -62,6 +93,11 @@ body{
   font-weight:700;
   font-size:17px;
 }
+
+/* =========================
+   CONTACT
+========================= */
+
 .contact{
   display:grid;
   grid-template-columns:220px 1fr;
@@ -69,158 +105,991 @@ body{
   width:76%;
   font-size:14px;
 }
-.contact strong{color:#d4ae5f}
-.contact a{color:#fff;text-decoration:none}
-.contact a:hover{text-decoration:underline}
+
+.contact strong{
+  color:#d4ae5f;
+}
+
+.contact a{
+  color:#fff;
+  text-decoration:none;
+}
+
+.contact a:hover{
+  text-decoration:underline;
+}
+
+/* =========================
+   DOWNLOAD CV BUTTON
+========================= */
+
+.download-cv{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  margin-top:15px;
+
+  padding:10px 18px;
+
+  background:#d4ae5f;
+  color:#17294b !important;
+
+  border:1px solid #d4ae5f;
+  border-radius:5px;
+
+  text-decoration:none !important;
+
+  font-weight:700;
+  font-size:13px;
+
+  cursor:pointer;
+
+  transition:all .25s ease;
+}
+
+.download-cv:hover{
+  background:#ffffff;
+  color:#17294b !important;
+  transform:translateY(-2px);
+  box-shadow:0 5px 12px rgba(0,0,0,.2);
+}
+
+.download-cv span{
+  font-size:18px;
+  font-weight:bold;
+  line-height:1;
+}
+
+/* =========================
+   PROFILE PHOTO
+========================= */
+
 .photo{
   position:absolute;
+
   right:58px;
   top:10px;
+
   width:126px;
   height:150px;
+
   object-fit:cover;
+
   border:4px solid #fff;
   border-radius:16px;
+
   box-shadow:0 0 0 3px var(--gold);
+
   background:#ddd;
+
   z-index:2;
 }
-.content{padding:12px 58px 38px}
-.section{margin-top:15px}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+  padding:12px 58px 38px;
+}
+
+.section{
+  margin-top:15px;
+}
+
 .section h2{
   font-family:"Libre Baskerville",Georgia,serif;
+
   font-size:17px;
+
   margin:0 0 8px;
+
   color:var(--navy);
+
   border-bottom:2px solid var(--gold);
+
   padding-bottom:4px;
+
   text-transform:uppercase;
 }
-.profile{font-size:14px;text-align:justify;margin:0}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile{
+  font-size:14px;
+  text-align:justify;
+  margin:0;
+}
+
+/* =========================
+   EDUCATION ROWS
+========================= */
+
 .row{
   display:grid;
+
   grid-template-columns:1fr auto;
+
   gap:20px;
+
   margin:5px 0;
 }
-.row .main{font-weight:700;font-family:Georgia,serif}
-.row .sub{display:block;font-weight:400;color:var(--muted);font-style:italic}
-.row .date{text-align:right;font-weight:700;white-space:nowrap}
-.row .date small{display:block;color:var(--muted);font-style:italic;font-weight:400}
-ul{margin:3px 0 7px 18px;padding:0}
-li{margin:2px 0;font-size:13.5px}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:42px}
-.skill-title{color:var(--gold);font-family:Georgia,serif;font-style:italic;font-weight:700;margin:3px 0}
-.project b{font-family:Georgia,serif}
-.inline-line{font-size:13.5px;margin:4px 0}
-.inline-line b{font-family:Georgia,serif}
-.cert{margin:6px 0}
-.cert b{font-family:Georgia,serif}
-.meta{display:block;color:var(--muted);font-style:italic;font-size:13px}
+
+.row .main{
+  font-weight:700;
+  font-family:Georgia,serif;
+}
+
+.row .sub{
+  display:block;
+
+  font-weight:400;
+
+  color:var(--muted);
+
+  font-style:italic;
+}
+
+.row .date{
+  text-align:right;
+
+  font-weight:700;
+
+  white-space:nowrap;
+}
+
+.row .date small{
+  display:block;
+
+  color:var(--muted);
+
+  font-style:italic;
+
+  font-weight:400;
+}
+
+/* =========================
+   LISTS
+========================= */
+
+ul{
+  margin:3px 0 7px 18px;
+  padding:0;
+}
+
+li{
+  margin:2px 0;
+  font-size:13.5px;
+}
+
+/* =========================
+   TWO COLUMN SECTIONS
+========================= */
+
+.two-col{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:42px;
+}
+
+.skill-title{
+  color:var(--gold);
+
+  font-family:Georgia,serif;
+
+  font-style:italic;
+
+  font-weight:700;
+
+  margin:3px 0;
+}
+
+.project b{
+  font-family:Georgia,serif;
+}
+
+/* =========================
+   TECHNICAL SKILLS
+========================= */
+
+.inline-line{
+  font-size:13.5px;
+  margin:4px 0;
+}
+
+.inline-line b{
+  font-family:Georgia,serif;
+}
+
+/* =========================
+   CERTIFICATIONS
+========================= */
+
+.cert{
+  margin:6px 0;
+}
+
+.cert b{
+  font-family:Georgia,serif;
+}
+
+.meta{
+  display:block;
+
+  color:var(--muted);
+
+  font-style:italic;
+
+  font-size:13px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
   border-top:1px solid #ddd;
+
   padding:12px 58px 20px;
+
   color:#888;
+
   text-align:center;
+
   font-size:12px;
 }
+
+/* =========================
+   TABLET
+========================= */
+
 @media(max-width:800px){
-  .hero{padding:28px 28px 20px}
-  .content,footer{padding-left:28px;padding-right:28px}
-  .photo{right:28px;width:105px;height:128px}
-  .name{font-size:30px}
-  .subtitle{font-size:14px;max-width:62%}
-  .contact{width:65%;grid-template-columns:1fr}
-  .two-col{grid-template-columns:1fr;gap:10px}
+
+  .hero{
+    padding:28px 28px 20px;
+  }
+
+  .content,
+  footer{
+    padding-left:28px;
+    padding-right:28px;
+  }
+
+  .photo{
+    right:28px;
+
+    width:105px;
+    height:128px;
+  }
+
+  .name{
+    font-size:30px;
+  }
+
+  .subtitle{
+    font-size:14px;
+
+    max-width:62%;
+  }
+
+  .contact{
+    width:65%;
+
+    grid-template-columns:1fr;
+  }
+
+  .two-col{
+    grid-template-columns:1fr;
+
+    gap:10px;
+  }
+
 }
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:560px){
-  body{background:#fff}
-  .page{margin:0;box-shadow:none}
-  .hero{padding:22px 18px 18px}
-  .photo{position:relative;right:auto;top:auto;margin:12px auto 0;display:block}
-  .hero:after{display:none}
-  .name{font-size:26px;text-align:center}
-  .subtitle{text-align:center;max-width:none}
-  .contact{width:100%;text-align:center}
-  .content,footer{padding-left:18px;padding-right:18px}
-  .row{grid-template-columns:1fr}
-  .row .date{text-align:left}
+
+  body{
+    background:#fff;
+  }
+
+  .page{
+    margin:0;
+
+    box-shadow:none;
+  }
+
+  .hero{
+    padding:22px 18px 18px;
+  }
+
+  .photo{
+    position:relative;
+
+    right:auto;
+    top:auto;
+
+    margin:16px auto 0;
+
+    display:block;
+
+    width:110px;
+    height:130px;
+  }
+
+  .hero:after{
+    display:none;
+  }
+
+  .name{
+    font-size:26px;
+
+    text-align:center;
+  }
+
+  .subtitle{
+    text-align:center;
+
+    max-width:none;
+  }
+
+  .contact{
+    width:100%;
+
+    text-align:center;
+  }
+
+  .download-cv{
+    display:flex;
+
+    width:max-content;
+
+    margin:16px auto 0;
+  }
+
+  .content,
+  footer{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .row{
+    grid-template-columns:1fr;
+  }
+
+  .row .date{
+    text-align:left;
+  }
+
 }
+
 </style>
 </head>
+
+
 <body>
+
 <main class="page">
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="hero">
-  <h1 class="name">ZAIN UL ABADIN</h1>
-  <div class="subtitle">Software Engineer&nbsp; / &nbsp;MS Artificial Intelligence Candidate</div>
-  <div class="contact">
-    <div><strong>Phone:</strong> +92 303 7093043</div>
-    <div><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/zain-ul-abadin-25363920a" target="_blank">linkedin.com/in/zain-ul-abadin-25363920a</a></div>
-    <div><strong>Email:</strong> <a href="mailto:zaincomsatsvhr@gmail.com">zaincomsatsvhr@gmail.com</a></div>
-    <div><strong>GitHub:</strong> <a href="https://github.com/Mr-Zainulabadin" target="_blank">github.com/Mr-Zainulabadin</a></div>
+
+  <h1 class="name">
+    ZAIN UL ABADIN
+  </h1>
+
+  <div class="subtitle">
+    Software Engineer&nbsp; / &nbsp;MS Artificial Intelligence Candidate
   </div>
-  <img class="photo" src="assets/profile.png" alt="Zain Ul Abadin">
+
+
+  <!-- CONTACT INFORMATION -->
+
+  <div class="contact">
+
+    <div>
+      <strong>Phone:</strong>
+      +92 303 7093043
+    </div>
+
+    <div>
+      <strong>LinkedIn:</strong>
+
+      <a
+        href="https://linkedin.com/in/zain-ul-abadin-25363920a"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        linkedin.com/in/zain-ul-abadin-25363920a
+
+      </a>
+
+    </div>
+
+
+    <div>
+      <strong>Email:</strong>
+
+      <a href="mailto:zaincomsatsvhr@gmail.com">
+
+        zaincomsatsvhr@gmail.com
+
+      </a>
+
+    </div>
+
+
+    <div>
+      <strong>GitHub:</strong>
+
+      <a
+        href="https://github.com/Mr-Zainulabadin"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        github.com/Mr-Zainulabadin
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       DOWNLOAD CV BUTTON
+  ========================= -->
+
+  <a
+    class="download-cv"
+    href="assets/Zain_Ul_Abadin_CV_Academic%20%282%29.pdf"
+    download>
+
+    <span>↓</span>
+
+    Download CV
+
+  </a>
+
+
+  <!-- PROFILE IMAGE -->
+
+  <img
+    class="photo"
+    src="assets/profile.png"
+    alt="Zain Ul Abadin">
+
 </header>
 
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
 <section class="content">
-  <section class="section">
-    <h2>Profile</h2>
-    <p class="profile">Motivated Software Engineering graduate currently pursuing a Master's in Artificial Intelligence, with strong foundations in programming, web development and machine learning. Passionate about teaching and guiding students in both theoretical and practical domains. Seeking a Lecturer or Lab Instructor position to contribute to academic excellence and student development.</p>
-  </section>
 
-  <section class="section">
-    <h2>Education</h2>
-    <div class="row"><div class="main">MS Artificial Intelligence<span class="sub">COMSATS University Islamabad</span></div><div class="date">2026 – Present<small>In progress</small></div></div>
-    <div class="row"><div class="main">BS Software Engineering<span class="sub">COMSATS University Islamabad</span></div><div class="date">2021 – 2025<small>CGPA 3.03 / 4.00</small></div></div>
-    <div class="row"><div class="main">Intermediate<span class="sub">Punjab Group of Colleges</span></div><div class="date">2017 – 2019<small>Marks 758 / 1100</small></div></div>
-    <div class="row"><div class="main">Matriculation<span class="sub">Private</span></div><div class="date">2015 – 2016<small>Marks 836 / 1100</small></div></div>
-  </section>
 
-  <section class="section">
-    <h2>Teaching Experience</h2>
-    <div class="row"><div class="main">School Teacher (Matric &amp; Intermediate)</div><div class="date">2025 – 2026</div></div>
-    <ul><li>Taught Matric and Intermediate level students.</li><li>Managed exams, assignments and student assessment.</li></ul>
-  </section>
+<!-- PROFILE -->
 
-  <section class="section">
-    <h2>Academic Projects (2021 – 2025)</h2>
-    <ul class="project">
-      <li><b>AI-Based Text Emotion Recognition</b> – detecting emotions from text using machine learning.</li>
-      <li><b>Kammati (Committee) Mobile Application</b> – committee management app built with Flutter.</li>
-      <li><b>College Database Design</b> – relational database design for a college system.</li>
-    </ul>
-  </section>
+<section class="section">
 
-  <section class="section">
-    <h2>Teaching Skills</h2>
-    <div class="two-col">
-      <div><div class="skill-title">Course Design &amp; Delivery</div><ul><li>Outcome-Based Education (OBE)</li><li>CLO-based teaching and assessment</li><li>Lesson planning and lecture delivery</li><li>Lab supervision and practical training</li></ul></div>
-      <div><div class="skill-title">Assessment &amp; Mentoring</div><ul><li>Quiz, assignment and exam design</li><li>Rubric-based, CLO-mapped grading</li><li>Classroom management</li><li>Student mentoring and feedback</li></ul></div>
-    </div>
-  </section>
+  <h2>
+    Profile
+  </h2>
 
-  <section class="section">
-    <h2>Software Engineering Skills</h2>
-    <div class="two-col">
-      <div><div class="skill-title">Modelling &amp; Design</div><ul><li>UML diagrams (use case, class, sequence, activity)</li><li>ER and data flow diagrams</li><li>Object-oriented analysis and design</li><li>Design patterns and software architecture</li></ul></div>
-      <div><div class="skill-title">Engineering Practices</div><ul><li>Software Requirements Specification (SRS)</li><li>Software testing and quality assurance</li><li>Agile / Scrum and SDLC models</li><li>Git / GitHub and project documentation</li></ul></div>
-    </div>
-  </section>
+  <p class="profile">
 
-  <section class="section">
-    <h2>Technical Skills &amp; Tools</h2>
-    <div class="inline-line"><b>Languages:</b> Python, C++, SQL, HTML, CSS, SASS, Flutter</div>
-    <div class="inline-line"><b>Areas:</b> Machine Learning, Deep Learning, Databases, Web Technologies, Mobile App Development, OOP</div>
-    <div class="inline-line"><b>Tools:</b> VS Code, Android Studio, Visual Studio, GitHub, DBMS, MS Project, MS Office, Google Colab, Kaggle</div>
-  </section>
+    Motivated Software Engineering graduate currently pursuing a
+    Master's in Artificial Intelligence, with strong foundations in
+    programming, web development and machine learning. Passionate
+    about teaching and guiding students in both theoretical and
+    practical domains. Seeking a Lecturer or Lab Instructor position
+    to contribute to academic excellence and student development.
 
-  <section class="section">
-    <h2>Certifications</h2>
-    <div class="cert"><b>Introduction to Deep Learning &amp; Neural Networks with Keras</b><span class="meta">IBM | Sep 2026 | Credential ID: OJCD82P8YG0Y</span></div>
-    <div class="cert"><b>Machine Learning with Python</b><span class="meta">IBM | Jul 2026 | Credential ID: J94XC7FKNNVC</span></div>
-  </section>
+  </p>
+
 </section>
-<footer>ZAIN UL ABADIN • SOFTWARE ENGINEER • MS ARTIFICIAL INTELLIGENCE CANDIDATE</footer>
+
+
+
+<!-- EDUCATION -->
+
+<section class="section">
+
+  <h2>
+    Education
+  </h2>
+
+
+  <div class="row">
+
+    <div class="main">
+
+      MS Artificial Intelligence
+
+      <span class="sub">
+        COMSATS University Islamabad
+      </span>
+
+    </div>
+
+    <div class="date">
+
+      2026 – Present
+
+      <small>
+        In progress
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <div class="main">
+
+      BS Software Engineering
+
+      <span class="sub">
+        COMSATS University Islamabad
+      </span>
+
+    </div>
+
+    <div class="date">
+
+      2021 – 2025
+
+      <small>
+        CGPA 3.03 / 4.00
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <div class="main">
+
+      Intermediate
+
+      <span class="sub">
+        Punjab Group of Colleges
+      </span>
+
+    </div>
+
+    <div class="date">
+
+      2017 – 2019
+
+      <small>
+        Marks 758 / 1100
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <div class="main">
+
+      Matriculation
+
+      <span class="sub">
+        Private
+      </span>
+
+    </div>
+
+    <div class="date">
+
+      2015 – 2016
+
+      <small>
+        Marks 836 / 1100
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- TEACHING EXPERIENCE -->
+
+<section class="section">
+
+  <h2>
+    Teaching Experience
+  </h2>
+
+
+  <div class="row">
+
+    <div class="main">
+
+      School Teacher (Matric &amp; Intermediate)
+
+    </div>
+
+    <div class="date">
+
+      2025 – 2026
+
+    </div>
+
+  </div>
+
+
+  <ul>
+
+    <li>
+      Taught Matric and Intermediate level students.
+    </li>
+
+    <li>
+      Managed exams, assignments and student assessment.
+    </li>
+
+  </ul>
+
+</section>
+
+
+
+<!-- ACADEMIC PROJECTS -->
+
+<section class="section">
+
+  <h2>
+    Academic Projects (2021 – 2025)
+  </h2>
+
+
+  <ul class="project">
+
+    <li>
+
+      <b>
+        AI-Based Text Emotion Recognition
+      </b>
+
+      – detecting emotions from text using machine learning.
+
+    </li>
+
+
+    <li>
+
+      <b>
+        Kammati (Committee) Mobile Application
+      </b>
+
+      – committee management app built with Flutter.
+
+    </li>
+
+
+    <li>
+
+      <b>
+        College Database Design
+      </b>
+
+      – relational database design for a college system.
+
+    </li>
+
+  </ul>
+
+</section>
+
+
+
+<!-- TEACHING SKILLS -->
+
+<section class="section">
+
+  <h2>
+    Teaching Skills
+  </h2>
+
+
+  <div class="two-col">
+
+
+    <div>
+
+      <div class="skill-title">
+        Course Design &amp; Delivery
+      </div>
+
+      <ul>
+
+        <li>
+          Outcome-Based Education (OBE)
+        </li>
+
+        <li>
+          CLO-based teaching and assessment
+        </li>
+
+        <li>
+          Lesson planning and lecture delivery
+        </li>
+
+        <li>
+          Lab supervision and practical training
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <div class="skill-title">
+        Assessment &amp; Mentoring
+      </div>
+
+      <ul>
+
+        <li>
+          Quiz, assignment and exam design
+        </li>
+
+        <li>
+          Rubric-based, CLO-mapped grading
+        </li>
+
+        <li>
+          Classroom management
+        </li>
+
+        <li>
+          Student mentoring and feedback
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- SOFTWARE ENGINEERING SKILLS -->
+
+<section class="section">
+
+  <h2>
+    Software Engineering Skills
+  </h2>
+
+
+  <div class="two-col">
+
+
+    <div>
+
+      <div class="skill-title">
+        Modelling &amp; Design
+      </div>
+
+      <ul>
+
+        <li>
+          UML diagrams (use case, class, sequence, activity)
+        </li>
+
+        <li>
+          ER and data flow diagrams
+        </li>
+
+        <li>
+          Object-oriented analysis and design
+        </li>
+
+        <li>
+          Design patterns and software architecture
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <div class="skill-title">
+        Engineering Practices
+      </div>
+
+      <ul>
+
+        <li>
+          Software Requirements Specification (SRS)
+        </li>
+
+        <li>
+          Software testing and quality assurance
+        </li>
+
+        <li>
+          Agile / Scrum and SDLC models
+        </li>
+
+        <li>
+          Git / GitHub and project documentation
+        </li>
+
+      </ul>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- TECHNICAL SKILLS -->
+
+<section class="section">
+
+  <h2>
+    Technical Skills &amp; Tools
+  </h2>
+
+
+  <div class="inline-line">
+
+    <b>
+      Languages:
+    </b>
+
+    Python, C++, SQL, HTML, CSS, SASS, Flutter
+
+  </div>
+
+
+  <div class="inline-line">
+
+    <b>
+      Areas:
+    </b>
+
+    Machine Learning, Deep Learning, Databases,
+    Web Technologies, Mobile App Development, OOP
+
+  </div>
+
+
+  <div class="inline-line">
+
+    <b>
+      Tools:
+    </b>
+
+    VS Code, Android Studio, Visual Studio, GitHub,
+    DBMS, MS Project, MS Office, Google Colab, Kaggle
+
+  </div>
+
+</section>
+
+
+
+<!-- CERTIFICATIONS -->
+
+<section class="section">
+
+  <h2>
+    Certifications
+  </h2>
+
+
+  <div class="cert">
+
+    <b>
+      Introduction to Deep Learning &amp; Neural Networks with Keras
+    </b>
+
+    <span class="meta">
+
+      IBM | Sep 2026 |
+      Credential ID: OJCD82P8YG0Y
+
+    </span>
+
+  </div>
+
+
+  <div class="cert">
+
+    <b>
+      Machine Learning with Python
+    </b>
+
+    <span class="meta">
+
+      IBM | Jul 2026 |
+      Credential ID: J94XC7FKNNVC
+
+    </span>
+
+  </div>
+
+</section>
+
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  ZAIN UL ABADIN
+  •
+  SOFTWARE ENGINEER
+  •
+  MS ARTIFICIAL INTELLIGENCE CANDIDATE
+
+</footer>
+
+
 </main>
+
 </body>
 </html>
