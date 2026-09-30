@@ -39,108 +39,16 @@ footer{background:#091222;color:#8995a8;text-align:center;padding:20px;font-size
 @media(max-width:450px){.skills-grid{grid-template-columns:1fr}.stats{gap:13px}.stat strong{font-size:18px}.stat small{font-size:9px}h1{font-size:36px}.tagline{font-size:18px}.hero{min-height:700px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-/* Project cards — visual style based on the supplied reference image */
-.project-reference-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:18px;
-}
-
-.project-card-new{
-    padding:0;
-    min-height:0;
-    border-radius:16px;
-    overflow:hidden;
-    background:#fff;
-}
-
-.project-card-new:after{
-    display:none;
-}
-
-.project-card-new:hover{
-    transform:translateY(-7px);
-}
-
-.project-visual{
-    width:calc(100% - 30px);
-    height:213px;
-    margin:15px 15px 0;
-    display:block;
-    object-fit:cover;
-    border-radius:15px;
-}
-
-.project-content{
-    padding:27px 32px 30px;
-}
-
-.project-category{
-    color:#5a7ea9;
-    font-size:13px;
-    font-weight:800;
-    letter-spacing:.45px;
-    margin-bottom:18px;
-}
-
-.project-card-new h3{
-    font-size:26px;
-    line-height:1.55;
-    margin:0 0 16px;
-    color:var(--navy);
-}
-
-.project-card-new p{
-    font-size:17px;
-    line-height:1.7;
-    color:#657895;
-    margin:0 0 22px;
-    min-height:0;
-}
-
-.project-tech{
-    display:flex;
-    flex-wrap:wrap;
-    gap:5px;
-}
-
-.project-card-new .tag{
-    background:none;
-    padding:0;
-    border-radius:0;
-    color:#547198;
-    font-size:15px;
-    font-weight:750;
-}
-
-.project-card-new .tag:not(:last-child):after{
-    content:" • ";
-    margin-left:4px;
-    color:#547198;
-}
-
-.project-card-new .tag:last-child{
-    margin-right:0;
-}
-
-@media(max-width:900px){
-    .project-reference-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-    .project-card-new h3{
-        font-size:22px;
-    }
-    .project-card-new p{
-        font-size:15px;
-    }
-}
-
-@media(max-width:700px){
-    .project-reference-grid{
-        grid-template-columns:1fr;
-    }
-}
-
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project-card{border:1px solid var(--line);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 12px 35px rgba(7,26,53,.07);transition:.25s;display:flex;flex-direction:column}
+.project-card:hover{transform:translateY(-7px);box-shadow:0 22px 55px rgba(7,26,53,.14)}
+.project-visual{height:190px;background:linear-gradient(135deg,var(--navy),var(--navy2));position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.project-visual:before{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(240,202,106,.22);border-radius:50%;box-shadow:0 0 0 30px rgba(240,202,106,.025),0 0 0 60px rgba(240,202,106,.018)}
+.project-visual:after{content:"";position:absolute;inset:auto -30px -80px;height:130px;background:rgba(213,169,74,.08);transform:rotate(-8deg)}
+.project-icon{position:relative;z-index:2;width:74px;height:74px;border-radius:20px;border:1px solid rgba(240,202,106,.45);background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:var(--gold2);font-size:36px;font-weight:800}
+.project-no{position:absolute;z-index:3;top:14px;left:14px;background:var(--gold);color:var(--navy);font-weight:900;font-size:12px;border-radius:8px;padding:6px 9px}
+.project-type{position:absolute;z-index:3;right:14px;top:14px;color:#dbe5f2;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.18);padding:6px 8px;border-radius:7px}
+.project-body{padding:23px;display:flex;flex-direction:column;flex:1}.project-body h3{font-size:19px;line-height:1.25;color:var(--navy);margin-bottom:9px}.project-body p{font-size:13.5px;color:var(--muted);margin-bottom:17px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}.tag{font-size:11px;font-weight:700;color:var(--navy);background:#eef2f7;border-radius:999px;padding:5px 9px}.project-actions{display:flex;gap:9px;margin-top:17px}.mini-btn{font-size:12px;font-weight:800;padding:8px 11px;border-radius:8px;border:1px solid var(--line)}.mini-btn:hover{border-color:var(--gold);color:var(--navy)}.mini-btn.gold{background:var(--navy);color:#fff;border-color:var(--navy)}
 </style>
 </head>
 <body>
@@ -199,177 +107,46 @@ footer{background:#091222;color:#8995a8;text-align:center;padding:20px;font-size
 
 
 <section class="section reveal" id="projects">
-<div class="section-head">
-    <div>
-        <div class="kicker">03 — Projects</div>
-        <h2>Selected Work</h2>
-    </div>
-    <p class="section-intro">
-        Academic, AI, software engineering, mobile, web, database and research projects.
-    </p>
-</div>
+<div class="container">
+  <div class="section-head">
+    <div class="kicker">03 — Projects</div><h2>Selected Work</h2>
+    <p>No external project images are required. Every project visual below is generated directly with HTML/CSS, so the cards remain reliable on GitHub Pages.</p>
+  </div>
+  <div class="project-grid">
 
-<div class="projects project-reference-grid">
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">01</span><span class="project-type">AI / NLP</span><div class="project-icon">AI</div></div><div class="project-body"><h3>AI-Based Text Emotion Recognition</h3><p>Machine-learning project for recognizing emotions from textual input.</p><div class="tags"><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">ML</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/01.svg" alt="AI-Based Text Emotion Recognition">
-    <div class="project-content">
-        <div class="project-category">ARTIFICIAL INTELLIGENCE</div>
-        <h3>AI-Based Text Emotion Recognition</h3>
-        <p>Detecting emotions from text using machine learning and natural language processing concepts.</p>
-        <div class="project-tech"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">NLP</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">02</span><span class="project-type">Deep Learning</span><div class="project-icon">DL</div></div><div class="project-body"><h3>Real-Time Emotion Recognition System</h3><p>Real-time emotion recognition concept combining text and audio processing.</p><div class="tags"><span class="tag">NLP</span><span class="tag">LSTM</span><span class="tag">Audio</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/02.svg" alt="Real-Time Emotion Recognition System">
-    <div class="project-content">
-        <div class="project-category">AI / DEEP LEARNING</div>
-        <h3>Real-Time Emotion Recognition System</h3>
-        <p>Academic project exploring text and audio emotion recognition with a chat interface.</p>
-        <div class="project-tech"><span class="tag">NLP</span><span class="tag">LSTM</span><span class="tag">Audio Processing</span><span class="tag">Deep Learning</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">03</span><span class="project-type">Research</span><div class="project-icon">IoT</div></div><div class="project-body"><h3>Deep Learning Framework with IoT for Continuous Health Monitoring</h3><p>Research direction focused on continuous health monitoring and future risk analysis.</p><div class="tags"><span class="tag">Deep Learning</span><span class="tag">IoT</span><span class="tag">Healthcare AI</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/03.svg" alt="A Deep Learning Framework with IoT for Continuous Health Monitoring">
-    <div class="project-content">
-        <div class="project-category">RESEARCH / HEALTHCARE AI</div>
-        <h3>A Deep Learning Framework with IoT for Continuous Health Monitoring</h3>
-        <p>Research-oriented framework for continuous health monitoring and future risk analysis.</p>
-        <div class="project-tech"><span class="tag">Deep Learning</span><span class="tag">IoT</span><span class="tag">Healthcare AI</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">04</span><span class="project-type">Mobile</span><div class="project-icon">APP</div></div><div class="project-body"><h3>Kammati Mobile Application</h3><p>Mobile application project developed around committee-management functionality.</p><div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Mobile</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/04.svg" alt="Kammati Mobile Application">
-    <div class="project-content">
-        <div class="project-category">MOBILE DEVELOPMENT</div>
-        <h3>Kammati Mobile Application</h3>
-        <p>Committee management mobile application developed with Flutter.</p>
-        <div class="project-tech"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Mobile App Development</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">05</span><span class="project-type">Database</span><div class="project-icon">DB</div></div><div class="project-body"><h3>College Database Design</h3><p>Relational database design for a college management system.</p><div class="tags"><span class="tag">SQL</span><span class="tag">DBMS</span><span class="tag">ER Design</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/05.svg" alt="College Database Design">
-    <div class="project-content">
-        <div class="project-category">DATABASE SYSTEMS</div>
-        <h3>College Database Design</h3>
-        <p>Relational database design for a college management system.</p>
-        <div class="project-tech"><span class="tag">SQL</span><span class="tag">DBMS</span><span class="tag">ER Design</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">06</span><span class="project-type">Web App</span><div class="project-icon">WEB</div></div><div class="project-body"><h3>Smart Household & Home Services Management System</h3><p>Web application concept for organizing household and home-service activities.</p><div class="tags"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">SQLite</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/06.svg" alt="Smart Household &amp; Home Services Management System">
-    <div class="project-content">
-        <div class="project-category">WEB APPLICATION</div>
-        <h3>Smart Household &amp; Home Services Management System</h3>
-        <p>Web-based household and home-services management project.</p>
-        <div class="project-tech"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">SQLite</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">07</span><span class="project-type">Flutter</span><div class="project-icon">🎲</div></div><div class="project-body"><h3>Dice Game</h3><p>Multiplayer Flutter game with player selection, names, avatars, target value, toss logic, and score tracking.</p><div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Game</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/07.svg" alt="Dice Game">
-    <div class="project-content">
-        <div class="project-category">FLUTTER APPLICATION</div>
-        <h3>Dice Game</h3>
-        <p>Multi-player Flutter dice game with player setup, avatars, target scores and turn-based gameplay.</p>
-        <div class="project-tech"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Game Development</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">08</span><span class="project-type">Audio App</span><div class="project-icon">♫</div></div><div class="project-body"><h3>Xylophone App</h3><p>Interactive Flutter audio application with playable sound nodes and UI customization.</p><div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Audio</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/08.svg" alt="Xylophone App">
-    <div class="project-content">
-        <div class="project-category">FLUTTER APPLICATION</div>
-        <h3>Xylophone App</h3>
-        <p>Interactive mobile music application with audio playback and UI controls.</p>
-        <div class="project-tech"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Audio</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">09</span><span class="project-type">Game Logic</span><div class="project-icon">ABC</div></div><div class="project-body"><h3>Hangman / Word Prediction App</h3><p>Word-prediction game with configurable word length, tries, hidden letters, and game-start flow.</p><div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Logic</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/09.svg" alt="Hangman / Word Prediction App">
-    <div class="project-content">
-        <div class="project-category">FLUTTER / LOGIC</div>
-        <h3>Hangman / Word Prediction App</h3>
-        <p>Word-prediction game with configurable word length and attempts.</p>
-        <div class="project-tech"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Game Logic</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">10</span><span class="project-type">Web</span><div class="project-icon">⌕</div></div><div class="project-body"><h3>Google Advanced Search Page</h3><p>HTML and CSS implementation inspired by an advanced search interface.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Web</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/10.svg" alt="Google Advanced Search Page">
-    <div class="project-content">
-        <div class="project-category">WEB DEVELOPMENT</div>
-        <h3>Google Advanced Search Page</h3>
-        <p>Front-end implementation inspired by an advanced search interface.</p>
-        <div class="project-tech"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Web Development</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">11</span><span class="project-type">Machine Learning</span><div class="project-icon">ML</div></div><div class="project-body"><h3>Titanic Survival Prediction</h3><p>Classification workflow using preprocessing pipelines and machine-learning models for survival prediction.</p><div class="tags"><span class="tag">Python</span><span class="tag">KNN</span><span class="tag">Random Forest</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/11.svg" alt="Titanic Survival Prediction">
-    <div class="project-content">
-        <div class="project-category">MACHINE LEARNING</div>
-        <h3>Titanic Survival Prediction</h3>
-        <p>Classification workflow using preprocessing pipelines, feature engineering and model evaluation.</p>
-        <div class="project-tech"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Random Forest</span><span class="tag">KNN</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">12</span><span class="project-type">Healthcare ML</span><div class="project-icon">+</div></div><div class="project-body"><h3>Heart Disease Prediction</h3><p>Machine-learning workflow for exploring indicators associated with heart disease prediction.</p><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">scikit-learn</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/12.svg" alt="Heart Disease Prediction">
-    <div class="project-content">
-        <div class="project-category">MACHINE LEARNING</div>
-        <h3>Heart Disease Prediction</h3>
-        <p>Machine-learning workflow for structured health-indicator classification.</p>
-        <div class="project-tech"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">scikit-learn</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">13</span><span class="project-type">NLP</span><div class="project-icon">TXT</div></div><div class="project-body"><h3>Twitter Airline Sentiment Analysis</h3><p>NLP workflow for airline sentiment analysis using text vectorization and classification.</p><div class="tags"><span class="tag">NLP</span><span class="tag">TF-IDF</span><span class="tag">Random Forest</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/13.svg" alt="Twitter Airline Sentiment Analysis">
-    <div class="project-content">
-        <div class="project-category">NLP</div>
-        <h3>Twitter Airline Sentiment Analysis</h3>
-        <p>Text classification and sentiment analysis using vectorization and machine-learning approaches.</p>
-        <div class="project-tech"><span class="tag">NLP</span><span class="tag">TF-IDF</span><span class="tag">Random Forest</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">14</span><span class="project-type">AI Research</span><div class="project-icon">AG</div></div><div class="project-body"><h3>Agentic AI / Autonomous Agents Survey</h3><p>Survey work covering agent architectures, reinforcement learning, deep RL, memory, and challenges.</p><div class="tags"><span class="tag">Agentic AI</span><span class="tag">RL</span><span class="tag">Deep RL</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/14.svg" alt="Agentic AI / Autonomous Agents Survey">
-    <div class="project-content">
-        <div class="project-category">RESEARCH</div>
-        <h3>Agentic AI / Autonomous Agents Survey</h3>
-        <p>Academic exploration of agent architectures, reinforcement learning, memory and challenges.</p>
-        <div class="project-tech"><span class="tag">Agentic AI</span><span class="tag">RL</span><span class="tag">Deep RL</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">15</span><span class="project-type">Computer Vision</span><div class="project-icon">CV</div></div><div class="project-body"><h3>Computer Vision Coursework & Experiments</h3><p>Coursework covering image formation, sampling, features, computer vision pipelines, and deep learning.</p><div class="tags"><span class="tag">Python</span><span class="tag">Computer Vision</span><span class="tag">Deep Learning</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/15.svg" alt="Computer Vision Coursework &amp; Experiments">
-    <div class="project-content">
-        <div class="project-category">COMPUTER VISION</div>
-        <h3>Computer Vision Coursework &amp; Experiments</h3>
-        <p>Academic work covering image formation, sampling, features, edges, corners and multiscale representations.</p>
-        <div class="project-tech"><span class="tag">Python</span><span class="tag">Computer Vision</span><span class="tag">Deep Learning</span></div>
-    </div>
-</article>
+    <article class="project-card reveal"><div class="project-visual"><span class="project-no">16</span><span class="project-type">Artificial Intelligence</span><div class="project-icon">A*</div></div><div class="project-body"><h3>Search Algorithms Projects</h3><p>AI search exercises covering graph traversal and heuristic search approaches.</p><div class="tags"><span class="tag">Python</span><span class="tag">BFS</span><span class="tag">DFS</span><span class="tag">A*</span></div><div class="project-actions"><a class="mini-btn gold" href="https://github.com/Mr-Zainul-abadin" target="_blank">GitHub</a></div></div></article>
 
-<article class="project project-card-new reveal">
-    <img class="project-visual" src="assets/project-visuals/16.svg" alt="Search Algorithms Projects">
-    <div class="project-content">
-        <div class="project-category">ARTIFICIAL INTELLIGENCE</div>
-        <h3>Search Algorithms Projects</h3>
-        <p>Implementation and study of BFS, DFS and A* graph search techniques.</p>
-        <div class="project-tech"><span class="tag">Python</span><span class="tag">BFS / DFS</span><span class="tag">A*</span></div>
-    </div>
-</article>
+  </div>
 </div>
 </section>
 
